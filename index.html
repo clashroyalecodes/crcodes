@@ -87,7 +87,7 @@
         }
 
         .logo {
-            width: 360px; /* Increased from 320px */
+            width: 360px;
             max-width: 90%;
             height: auto;
         }
@@ -151,7 +151,7 @@
         }
 
         .download-links-wrapper {
-            margin: 30px 0 35px 0;
+            margin: 30px 0 20px 0; /* Reduced bottom margin */
             text-align: center;
         }
 
@@ -179,14 +179,16 @@
         }
 
         .decoration-section {
-            margin: 35px 0 30px 0;
+            margin: 10px 0 5px 0; /* Reduced margins to bring closer to footer */
             width: 100%;
             display: flex;
             justify-content: center;
+            position: relative;
+            z-index: 1;
         }
 
         .decoration-image {
-            width: 480px;
+            width: 520px; /* Increased from 480px */
             max-width: 95%;
             height: auto;
         }
@@ -199,9 +201,10 @@
             position: relative;
             left: 50%;
             transform: translateX(-50%);
-            margin-top: -50px;
-            padding-top: 80px;
+            margin-top: -30px; /* Changed from -50px to bring footer closer */
+            padding-top: 60px; /* Reduced from 80px */
             box-sizing: border-box;
+            z-index: 2;
         }
 
         .links {
@@ -242,7 +245,7 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            flex-direction: column; /* Added: Supercell logo above Manage Cookies */
+            flex-direction: column;
         }
 
         .bottom-links img {
@@ -347,7 +350,7 @@
             }
             
             .logo { 
-                width: 300px; /* Increased from 260px */
+                width: 300px;
             }
             
             .lead-text { 
@@ -377,7 +380,11 @@
             }
             
             .decoration-image { 
-                width: 400px; 
+                width: 450px; /* Increased from 400px */
+            }
+            
+            .download-links-wrapper {
+                margin: 25px 0 15px 0; /* Adjusted for mobile */
             }
             
             .download-links img { 
@@ -399,8 +406,8 @@
             
             footer {
                 padding: 25px 15px 15px;
-                margin-top: -40px;
-                padding-top: 70px;
+                margin-top: -25px; /* Adjusted for mobile */
+                padding-top: 55px; /* Adjusted for mobile */
                 position: relative;
                 left: 50%;
                 transform: translateX(-50%);
@@ -460,7 +467,7 @@
             }
             
             .logo { 
-                width: 260px; /* Increased from 220px */
+                width: 260px;
                 margin-bottom: 20px;
             }
             
@@ -491,8 +498,12 @@
             }
             
             .decoration-image { 
-                width: 320px; 
-                margin: 25px 0;
+                width: 360px; /* Increased from 320px */
+                margin: 5px 0 0 0; /* Reduced margin */
+            }
+            
+            .download-links-wrapper {
+                margin: 20px 0 10px 0; /* Adjusted for mobile */
             }
             
             .download-links { 
@@ -508,8 +519,8 @@
             
             footer {
                 padding: 20px 10px 15px;
-                margin-top: -30px;
-                padding-top: 60px;
+                margin-top: -20px; /* Adjusted for mobile */
+                padding-top: 50px; /* Adjusted for mobile */
                 position: relative;
                 left: 50%;
                 transform: translateX(-50%);
