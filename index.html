@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clash Royale</title>
     <meta name="description" content="Open link in Clash Royale or download the game.">
     
@@ -21,7 +21,6 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             background: #f2f2f2;
             color: #010101;
-            font-size: 18px; /* Increased base font size for zoomed effect */
         }
 
         /* ========== MAIN CONTAINER ========== */
@@ -37,14 +36,14 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 25px;
+            padding: 20px;
         }
 
         /* ========== LANGUAGE DROPDOWN ========== */
         .language-dropdown-wrapper {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 15px;
+            right: 15px;
             z-index: 1000;
         }
 
@@ -52,16 +51,16 @@
             background: rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.3);
             color: white;
-            padding: 10px 35px 10px 40px;
-            border-radius: 30px;
-            font-size: 16px;
+            padding: 8px 30px 8px 35px;
+            border-radius: 25px;
+            font-size: 14px;
             cursor: pointer;
             appearance: none;
             background-image: url('https://link.clashroyale.com/images/common/language-globe-white.svg'), url('https://link.clashroyale.com/images/common/language-caret-white.svg');
             background-repeat: no-repeat, no-repeat;
-            background-position: 12px center, right 12px center;
-            background-size: 20px, 14px;
-            min-width: 140px;
+            background-position: 10px center, right 10px center;
+            background-size: 18px, 12px;
+            min-width: 120px;
         }
 
         .language-dropdown option {
@@ -76,43 +75,43 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            max-width: 900px;
-            padding: 40px 25px;
+            max-width: 800px;
+            padding: 30px 20px;
             text-align: center;
         }
 
-        /* ========== LOGO - BIGGER ========== */
+        /* ========== LOGO ========== */
         .logo-container {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .logo {
-            width: 400px; /* Increased from previous */
-            max-width: 95%;
+            width: 280px;
+            max-width: 90%;
             height: auto;
         }
 
         /* ========== LEAD TEXT ========== */
         .lead-text {
-            font-size: 32px; /* Increased */
+            font-size: 26px;
             font-weight: bold;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 40px;
-            line-height: 1.3;
-            padding: 0 15px;
+            margin-bottom: 30px;
+            line-height: 1.2;
+            padding: 0 10px;
         }
 
-        /* ========== MAIN BUTTON - BIGGER ========== */
+        /* ========== MAIN BUTTON ========== */
         .main-button {
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 0;
-            font-size: 26px; /* Increased */
+            font-size: 22px;
             position: relative;
             font-weight: bold;
             border: none;
-            height: 85px; /* Increased */
+            height: 70px;
             text-shadow: 0 -2px #000, 0 0 #000, 0 2px #000, 0 4px #000,
                        -1px -1px #000, 1px -1px #000, 1px 0 #000, -1px 0 #000,
                        1px 1px #000, -1px 1px #000, 1px 2px #000, -1px 2px #000;
@@ -120,8 +119,8 @@
             background-size: 100% 100%;
             color: white;
             text-decoration: none;
-            min-width: 280px; /* Increased */
-            margin: 15px 0 40px 0;
+            min-width: 240px;
+            margin: 10px 0 30px 0;
             cursor: pointer;
         }
 
@@ -130,70 +129,43 @@
             content: "";
             position: absolute;
             top: 0;
-            height: 85px; /* Increased */
-            width: 15px; /* Increased */
+            height: 70px;
+            width: 12px;
             background-size: 100% 100%;
         }
 
         .main-button:before {
-            left: -15px;
+            left: -12px;
             background-image: url('https://i.postimg.cc/dVhzdkJR/left.png');
         }
 
         .main-button:after {
-            right: -15px;
+            right: -12px;
             background-image: url('https://i.postimg.cc/C5vQnYtc/right.png');
         }
 
         .main-button span {
-            line-height: 30px;
-            padding: 0 25px;
+            line-height: 25px;
+            padding: 0 20px;
             display: block;
             transform: translateY(-2px);
         }
 
-        /* ========== GOOGLE PLAY MESSAGE ========== */
-        .google-play-message {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0 30px 0;
-            max-width: 600px;
-            width: 90%;
-        }
-
-        .google-play-message p {
-            font-size: 18px;
-            margin-bottom: 15px;
-            line-height: 1.4;
-        }
-
-        .google-play-message ul {
-            text-align: left;
-            padding-left: 25px;
-            margin-bottom: 15px;
-        }
-
-        .google-play-message li {
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
-
         /* ========== DOWNLOAD SECTION ========== */
         .download-links-wrapper {
-            margin: 25px 0 35px 0;
+            margin: 20px 0 25px 0;
             text-align: center;
         }
 
         .download-links-heading {
-            font-size: 24px; /* Increased */
+            font-size: 20px;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .download-links {
             display: flex;
-            gap: 25px; /* Increased */
+            gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -203,22 +175,22 @@
         }
 
         .download-links img {
-            width: 220px; /* Increased */
-            height: 66px; /* Increased */
-            border-radius: 8px;
+            width: 180px;
+            height: 54px;
+            border-radius: 6px;
         }
 
         /* ========== DECORATION SECTION ========== */
         .decoration-section {
-            margin: 35px 0 30px 0;
+            margin: 25px 0 20px 0;
             width: 100%;
             display: flex;
             justify-content: center;
         }
 
         .decoration-image {
-            width: 480px; /* Increased */
-            max-width: 95%;
+            width: 420px;
+            max-width: 90%;
             height: auto;
         }
 
@@ -226,23 +198,23 @@
         footer {
             background: #000;
             color: #fff;
-            padding: 25px 20px 20px;
+            padding: 20px 15px 15px;
             width: 100%;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         .links {
             display: flex;
             justify-content: center;
-            gap: 25px; /* Increased */
+            gap: 20px;
             flex-wrap: wrap;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .links a {
             color: #ccc;
             text-decoration: none;
-            font-size: 16px; /* Increased */
+            font-size: 13px;
         }
 
         .links a:hover {
@@ -251,11 +223,11 @@
 
         .footer-bottom {
             border-top: 1px solid #333;
-            padding-top: 25px;
+            padding-top: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
 
         @media (min-width: 576px) {
@@ -268,28 +240,28 @@
         .bottom-links {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
 
         .bottom-links img {
-            width: 58px; /* Increased */
-            height: 48px; /* Increased */
+            width: 48px;
+            height: 38px;
         }
 
         .no-track {
             color: #999;
             text-decoration: none;
-            font-size: 16px; /* Increased */
+            font-size: 13px;
         }
 
         .social {
             display: flex;
-            gap: 18px; /* Increased */
+            gap: 12px;
         }
 
         .social a {
-            width: 45px; /* Increased */
-            height: 45px; /* Increased */
+            width: 36px;
+            height: 36px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
@@ -300,8 +272,8 @@
         }
 
         .social a svg {
-            width: 22px; /* Increased */
-            height: 22px; /* Increased */
+            width: 18px;
+            height: 18px;
         }
 
         .social a:hover {
@@ -314,16 +286,16 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 85%;
-            height: 85%;
-            max-width: 1100px;
-            max-height: 800px;
+            width: 80%;
+            height: 80%;
+            max-width: 1000px;
+            max-height: 700px;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             z-index: 9999;
             display: none;
-            border: 3px solid #22c55e;
+            border: 2px solid #22c55e;
             overflow: hidden;
         }
         
@@ -337,8 +309,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(3px);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(2px);
             z-index: 9998;
             display: none;
         }
@@ -354,163 +326,25 @@
         }
 
         /* ========== RESPONSIVE ========== */
-        @media (max-width: 992px) {
-            .logo {
-                width: 350px;
-            }
-            
-            .lead-text {
-                font-size: 28px;
-            }
-            
-            .main-button {
-                font-size: 24px;
-                height: 80px;
-                min-width: 260px;
-            }
-            
-            .main-button:before,
-            .main-button:after {
-                height: 80px;
-            }
-            
-            .decoration-image {
-                width: 420px;
-            }
-            
-            .download-links img {
-                width: 200px;
-                height: 60px;
-            }
-        }
-
         @media (max-width: 768px) {
-            html, body {
-                font-size: 16px;
-            }
-            
             .main-container {
-                padding: 20px;
-            }
-            
-            .logo { 
-                width: 320px; 
-            }
-            
-            .lead-text { 
-                font-size: 26px; 
-                margin-bottom: 35px;
-            }
-            
-            .main-button { 
-                min-width: 240px; 
-                font-size: 22px; 
-                height: 75px;
-                margin-bottom: 35px;
-            }
-            
-            .main-button:before,
-            .main-button:after { 
-                height: 75px; 
-            }
-            
-            .decoration-image { 
-                width: 380px; 
-            }
-            
-            .download-links img { 
-                width: 190px; 
-                height: 57px; 
-            }
-            
-            .download-links {
-                gap: 20px;
-            }
-            
-            .google-play-message {
                 padding: 15px;
-                margin: 15px 0 25px 0;
             }
-        }
-
-        @media (max-width: 576px) {
+            
             .logo { 
-                width: 280px; 
-            }
-            
-            .lead-text { 
-                font-size: 24px; 
-                margin-bottom: 30px;
-            }
-            
-            .main-button { 
-                min-width: 220px; 
-                font-size: 20px; 
-                height: 70px;
-                margin-bottom: 30px;
-            }
-            
-            .main-button:before,
-            .main-button:after { 
-                height: 70px; 
-                width: 12px;
-            }
-            
-            .main-button:before {
-                left: -12px;
-            }
-            
-            .main-button:after {
-                right: -12px;
-            }
-            
-            .decoration-image { 
-                width: 320px; 
-            }
-            
-            .download-links { 
-                flex-direction: column; 
-                align-items: center; 
-                gap: 15px;
-            }
-            
-            .download-links img { 
                 width: 220px; 
-                height: 66px; 
-            }
-            
-            .footer-bottom { 
-                gap: 15px; 
-            }
-            
-            .social { 
-                gap: 12px; 
-            }
-            
-            .social a {
-                width: 40px;
-                height: 40px;
-            }
-            
-            .social a svg {
-                width: 20px;
-                height: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo { 
-                width: 250px; 
             }
             
             .lead-text { 
                 font-size: 22px; 
+                margin-bottom: 25px;
             }
             
             .main-button { 
-                min-width: 200px; 
+                min-width: 210px; 
                 font-size: 19px; 
                 height: 65px;
+                margin-bottom: 25px;
             }
             
             .main-button:before,
@@ -519,16 +353,100 @@
             }
             
             .decoration-image { 
+                width: 350px; 
+            }
+            
+            .download-links img { 
+                width: 160px; 
+                height: 48px; 
+            }
+            
+            .links { 
+                gap: 15px; 
+            }
+            
+            .download-links { 
+                gap: 10px; 
+            }
+            
+            .footer-bottom { 
+                gap: 12px; 
+            }
+            
+            .social { 
+                gap: 10px; 
+            }
+            
+            .redirect-overlay {
+                width: 90%;
+                height: 75%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-container {
+                padding: 10px;
+            }
+            
+            .logo { 
+                width: 180px; 
+                margin-bottom: 15px;
+            }
+            
+            .lead-text { 
+                font-size: 20px; 
+                margin-bottom: 20px;
+            }
+            
+            .main-button { 
+                min-width: 190px; 
+                font-size: 18px; 
+                height: 60px;
+                margin-bottom: 20px;
+            }
+            
+            .main-button:before,
+            .main-button:after { 
+                height: 60px; 
+            }
+            
+            .decoration-image { 
                 width: 280px; 
+                margin: 15px 0;
             }
             
-            .google-play-message {
-                padding: 12px;
-                font-size: 16px;
+            .download-links { 
+                flex-direction: column; 
+                align-items: center; 
+                gap: 8px;
             }
             
-            .google-play-message ul {
-                padding-left: 20px;
+            .download-links img { 
+                width: 180px; 
+                height: 54px; 
+            }
+            
+            .footer-bottom { 
+                gap: 10px; 
+            }
+            
+            .social { 
+                gap: 8px; 
+            }
+            
+            .social a {
+                width: 32px;
+                height: 32px;
+            }
+            
+            .social a svg {
+                width: 16px;
+                height: 16px;
+            }
+            
+            .redirect-overlay {
+                width: 95%;
+                height: 70%;
             }
         }
     </style>
@@ -570,7 +488,7 @@
         
         <!-- Main Content -->
         <div class="content-wrapper">
-            <!-- Logo - Bigger -->
+            <!-- Logo -->
             <div class="logo-container">
                 <a href="https://clashroyale.com">
                     <img src="https://i.postimg.cc/HsR6qSC8/logo-opt-750.webp" alt="Clash Royale" class="logo">
@@ -586,19 +504,6 @@
             <button class="main-button show-redirect-overlay" data-url="https://bouttiq.graphics/cl/i/j77p9p">
                 <span>CLAIM REWARD</span>
             </button>
-            
-            <!-- Google Play Doesn't Show? -->
-            <div class="google-play-message">
-                <p><strong>Google Play doesn't show?</strong> Try these solutions:</p>
-                <ul>
-                    <li>Make sure you're logged into the correct Google Play account</li>
-                    <li>Clear Google Play Store cache in your device settings</li>
-                    <li>Check if Clash Royale is already installed on your device</li>
-                    <li>Ensure your device meets the game requirements</li>
-                    <li>Try opening the link in a different browser</li>
-                </ul>
-                <p>If issues persist, try the App Store link above or contact support.</p>
-            </div>
             
             <!-- Download Section -->
             <div class="download-links-wrapper">
