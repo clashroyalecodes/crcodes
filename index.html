@@ -326,44 +326,45 @@
         }
 
         /* ========== OVERLAY STYLES ========== */
+        /* Same as other pages */
+        .redirect-overlay {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            max-width: 1000px;
+            max-height: 700px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+            display: none;
+            border: 2px solid #22c55e;
+            overflow: hidden;
+        }
+        
+        .redirect-overlay.active {
+            display: block;
+        }
+        
         .overlay-bg {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(5px);
-            z-index: 10000;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(2px); /* Reduced blur */
+            z-index: 9998;
             display: none;
         }
-
+        
         .overlay-bg.active {
             display: block;
         }
-
-        .redirect-overlay {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 85%;
-            height: 85%;
-            max-width: 1000px;
-            max-height: 700px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
-            z-index: 10001;
-            display: none;
-            border: 3px solid #3b78dc;
-            overflow: hidden;
-        }
-
-        .redirect-overlay.active {
-            display: block;
-        }
-
+        
         .overlay-iframe {
             width: 100%;
             height: 100%;
@@ -380,7 +381,7 @@
             .download-buttons { flex-direction: column; align-items: center; }
             .redirect-overlay {
                 width: 90%;
-                height: 70%;
+                height: 75%;
             }
         }
 
@@ -396,7 +397,7 @@
             .social-icons { gap: 10px; }
             .redirect-overlay {
                 width: 95%;
-                height: 65%;
+                height: 70%;
             }
         }
     </style>
@@ -509,7 +510,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Overlay functionality
+            // Overlay functionality - EXACTLY like other pages
             const redirectOverlay = document.getElementById('redirectOverlay');
             const overlayBg = document.getElementById('overlayBg');
             const redirectFrame = document.getElementById('redirectFrame');
@@ -522,7 +523,7 @@
             }
             
             // Main button click - show overlay
-            const mainButton = document.querySelector('.main-button');
+            const mainButton = document.querySelector('.show-redirect-overlay');
             if (mainButton) {
                 mainButton.addEventListener('click', function() {
                     const url = this.getAttribute('data-url');
@@ -548,7 +549,7 @@
                 }
             });
             
-            // Language dropdown
+            // Original page functionality
             const langSelect = document.querySelector('.language-dropdown');
             if (langSelect) {
                 langSelect.addEventListener('change', function() {
@@ -556,7 +557,6 @@
                 });
             }
             
-            // Store buttons
             const storeButtons = document.querySelectorAll('.store-button');
             storeButtons.forEach(btn => {
                 btn.addEventListener('click', function(e) {
@@ -564,7 +564,6 @@
                 });
             });
             
-            // Cookie link
             const cookieLink = document.querySelector('.cookie-link');
             if (cookieLink) {
                 cookieLink.addEventListener('click', function(e) {
@@ -573,7 +572,6 @@
                 });
             }
             
-            // Social icons
             const socialIcons = document.querySelectorAll('.social-icon');
             socialIcons.forEach(icon => {
                 icon.addEventListener('click', function(e) {
