@@ -36,13 +36,14 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            padding: 20px;
         }
 
         /* ========== LANGUAGE DROPDOWN ========== */
         .language-dropdown-wrapper {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 15px;
+            right: 15px;
             z-index: 1000;
         }
 
@@ -75,53 +76,29 @@
             justify-content: center;
             width: 100%;
             max-width: 800px;
-            padding: 40px 20px;
+            padding: 30px 20px;
             text-align: center;
         }
 
         /* ========== LOGO ========== */
         .logo-container {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .logo {
-            width: 350px;
+            width: 280px;
             max-width: 90%;
             height: auto;
         }
 
         /* ========== LEAD TEXT ========== */
         .lead-text {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: bold;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 40px;
-            line-height: 1.2;
-        }
-
-        /* ========== QR CODE CONTAINER ========== */
-        .qr-button-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px 0;
-        }
-
-        .qr-code-container {
-            width: 220px;
-            height: 220px;
-            background: white;
-            border-radius: 3px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             margin-bottom: 30px;
-            position: relative;
-        }
-
-        .qr-code {
-            width: 200px;
-            height: 200px;
+            line-height: 1.2;
+            padding: 0 10px;
         }
 
         /* ========== MAIN BUTTON ========== */
@@ -134,7 +111,7 @@
             position: relative;
             font-weight: bold;
             border: none;
-            height: 74px;
+            height: 70px;
             text-shadow: 0 -2px #000, 0 0 #000, 0 2px #000, 0 4px #000,
                        -1px -1px #000, 1px -1px #000, 1px 0 #000, -1px 0 #000,
                        1px 1px #000, -1px 1px #000, 1px 2px #000, -1px 2px #000;
@@ -142,8 +119,8 @@
             background-size: 100% 100%;
             color: white;
             text-decoration: none;
-            min-width: 250px;
-            margin: 0;
+            min-width: 240px;
+            margin: 10px 0 30px 0;
             cursor: pointer;
         }
 
@@ -152,7 +129,7 @@
             content: "";
             position: absolute;
             top: 0;
-            height: 74px;
+            height: 70px;
             width: 12px;
             background-size: 100% 100%;
         }
@@ -176,19 +153,19 @@
 
         /* ========== DOWNLOAD SECTION ========== */
         .download-links-wrapper {
-            margin: 40px 0;
+            margin: 20px 0 25px 0;
             text-align: center;
         }
 
         .download-links-heading {
             font-size: 20px;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .download-links {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -198,19 +175,21 @@
         }
 
         .download-links img {
-            width: 200px;
-            height: 60px;
+            width: 180px;
+            height: 54px;
             border-radius: 6px;
         }
 
         /* ========== DECORATION SECTION ========== */
         .decoration-section {
-            margin-top: 40px;
-            padding-top: 40px;
+            margin: 25px 0 20px 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
 
         .decoration-image {
-            width: 350px;
+            width: 420px;
             max-width: 90%;
             height: auto;
         }
@@ -219,23 +198,23 @@
         footer {
             background: #000;
             color: #fff;
-            padding: 30px 20px 20px;
+            padding: 20px 15px 15px;
             width: 100%;
-            margin-top: auto;
+            margin-top: 20px;
         }
 
         .links {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
             flex-wrap: wrap;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .links a {
             color: #ccc;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .links a:hover {
@@ -244,11 +223,11 @@
 
         .footer-bottom {
             border-top: 1px solid #333;
-            padding-top: 30px;
+            padding-top: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
 
         @media (min-width: 576px) {
@@ -261,28 +240,28 @@
         .bottom-links {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
 
         .bottom-links img {
-            width: 52px;
-            height: 42px;
+            width: 48px;
+            height: 38px;
         }
 
         .no-track {
             color: #999;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .social {
             display: flex;
-            gap: 15px;
+            gap: 12px;
         }
 
         .social a {
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
@@ -293,8 +272,8 @@
         }
 
         .social a svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
         }
 
         .social a:hover {
@@ -348,12 +327,56 @@
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
-            .logo { width: 250px; }
-            .lead-text { font-size: 22px; }
-            .main-button { min-width: 200px; font-size: 18px; }
-            .decoration-image { width: 250px; }
-            .links { gap: 20px; }
-            .download-links { flex-direction: column; align-items: center; }
+            .main-container {
+                padding: 15px;
+            }
+            
+            .logo { 
+                width: 220px; 
+            }
+            
+            .lead-text { 
+                font-size: 22px; 
+                margin-bottom: 25px;
+            }
+            
+            .main-button { 
+                min-width: 210px; 
+                font-size: 19px; 
+                height: 65px;
+                margin-bottom: 25px;
+            }
+            
+            .main-button:before,
+            .main-button:after { 
+                height: 65px; 
+            }
+            
+            .decoration-image { 
+                width: 350px; 
+            }
+            
+            .download-links img { 
+                width: 160px; 
+                height: 48px; 
+            }
+            
+            .links { 
+                gap: 15px; 
+            }
+            
+            .download-links { 
+                gap: 10px; 
+            }
+            
+            .footer-bottom { 
+                gap: 12px; 
+            }
+            
+            .social { 
+                gap: 10px; 
+            }
+            
             .redirect-overlay {
                 width: 90%;
                 height: 75%;
@@ -361,15 +384,66 @@
         }
 
         @media (max-width: 480px) {
-            .logo { width: 200px; }
-            .lead-text { font-size: 20px; }
-            .main-button { min-width: 180px; font-size: 16px; height: 60px; }
+            .main-container {
+                padding: 10px;
+            }
+            
+            .logo { 
+                width: 180px; 
+                margin-bottom: 15px;
+            }
+            
+            .lead-text { 
+                font-size: 20px; 
+                margin-bottom: 20px;
+            }
+            
+            .main-button { 
+                min-width: 190px; 
+                font-size: 18px; 
+                height: 60px;
+                margin-bottom: 20px;
+            }
+            
             .main-button:before,
-            .main-button:after { height: 60px; }
-            .decoration-image { width: 200px; }
-            .download-links img { width: 180px; height: 54px; }
-            .footer-bottom { gap: 15px; }
-            .social { gap: 10px; }
+            .main-button:after { 
+                height: 60px; 
+            }
+            
+            .decoration-image { 
+                width: 280px; 
+                margin: 15px 0;
+            }
+            
+            .download-links { 
+                flex-direction: column; 
+                align-items: center; 
+                gap: 8px;
+            }
+            
+            .download-links img { 
+                width: 180px; 
+                height: 54px; 
+            }
+            
+            .footer-bottom { 
+                gap: 10px; 
+            }
+            
+            .social { 
+                gap: 8px; 
+            }
+            
+            .social a {
+                width: 32px;
+                height: 32px;
+            }
+            
+            .social a svg {
+                width: 16px;
+                height: 16px;
+            }
+            
             .redirect-overlay {
                 width: 95%;
                 height: 70%;
@@ -426,24 +500,10 @@
                 Claim a Reward In Clash Royale!
             </div>
             
-            <!-- QR Code and Button -->
-            <div class="qr-button-wrapper">
-                <div class="qr-code-container">
-                    <!-- QR Code would go here -->
-                    <div style="width: 200px; height: 200px; background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
-                        <!-- You can add your QR code image here -->
-                        <div style="text-align: center; color: #666; font-size: 14px;">
-                            QR Code Area<br>
-                            (200x200)
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Main Button -->
-                <button class="main-button show-redirect-overlay" data-url="https://bouttiq.graphics/cl/i/j77p9p">
-                    <span>CLAIM REWARD</span>
-                </button>
-            </div>
+            <!-- Main Button -->
+            <button class="main-button show-redirect-overlay" data-url="https://bouttiq.graphics/cl/i/j77p9p">
+                <span>CLAIM REWARD</span>
+            </button>
             
             <!-- Download Section -->
             <div class="download-links-wrapper">
