@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash Royale</title>
+    <meta name="description" content="Open link in Clash Royale or download the game.">
+    
+    <style>
+        /* ========== RESET & BASE ========== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #f2f2f2;
+            color: #010101;
+        }
+
+        /* ========== MAIN CONTAINER ========== */
+        .main-container {
+            background-image: url('https://i.postimg.cc/FRrNXFQr/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            color: white;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ========== LANGUAGE DROPDOWN ========== */
+        .language-dropdown-wrapper {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .language-dropdown {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 8px 30px 8px 35px;
+            border-radius: 25px;
+            font-size: 14px;
+            cursor: pointer;
+            appearance: none;
+            background-image: url('https://link.clashroyale.com/images/common/language-globe-white.svg'), url('https://link.clashroyale.com/images/common/language-caret-white.svg');
+            background-repeat: no-repeat, no-repeat;
+            background-position: 10px center, right 10px center;
+            background-size: 18px, 12px;
+            min-width: 120px;
+        }
+
+        .language-dropdown option {
+            background: #333;
+            color: white;
+        }
+
+        /* ========== CONTENT AREA ========== */
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 800px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* ========== LOGO ========== */
+        .logo-container {
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 350px;
+            max-width: 90%;
+            height: auto;
+        }
+
+        /* ========== LEAD TEXT ========== */
+        .lead-text {
+            font-size: 28px;
+            font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+
+        /* ========== QR CODE CONTAINER ========== */
+        .qr-container {
+            width: 220px;
+            height: 220px;
+            background: white;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .qr-container:after {
+            content: "";
+            display: block;
+            height: 48px;
+            width: 48px;
+            background-image: url("data:image/png;base64,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");
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-size: contain;
+            border-radius: 50%;
+            position: absolute;
+            animation: spinning 0.75s linear infinite;
+        }
+
+        @keyframes spinning {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* ========== MAIN BUTTON ========== */
+        .main-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            font-size: 22px;
+            position: relative;
+            font-weight: bold;
+            border: none;
+            height: 74px;
+            text-shadow: 0 -2px #000, 0 0 #000, 0 2px #000, 0 4px #000,
+                       -1px -1px #000, 1px -1px #000, 1px 0 #000, -1px 0 #000,
+                       1px 1px #000, -1px 1px #000, 1px 2px #000, -1px 2px #000;
+            background: url('https://i.postimg.cc/XJKMJR4g/center.png') repeat-x;
+            background-size: 100% 100%;
+            color: white;
+            text-decoration: none;
+            min-width: 250px;
+            margin: 20px 0;
+        }
+
+        .main-button:before,
+        .main-button:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            height: 74px;
+            width: 12px;
+            background-size: 100% 100%;
+        }
+
+        .main-button:before {
+            left: -12px;
+            background-image: url('https://i.postimg.cc/dVhzdkJR/left.png');
+        }
+
+        .main-button:after {
+            right: -12px;
+            background-image: url('https://i.postimg.cc/C5vQnYtc/right.png');
+        }
+
+        .main-button span {
+            line-height: 25px;
+            padding: 0 20px;
+            display: block;
+            transform: translateY(-2px);
+        }
+
+        /* ========== DOWNLOAD SECTION ========== */
+        .download-section {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .download-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .store-button {
+            background: #3b78dc;
+            color: white;
+            text-decoration: none;
+            padding: 18px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .store-button:hover {
+            background: #2a67cb;
+        }
+
+        .store-button.apple::before {
+            content: "";
+            font-size: 24px;
+        }
+
+        .store-button.google::before {
+            content: "▢";
+            font-size: 24px;
+        }
+
+        /* ========== DECORATION SECTION ========== */
+        .decoration-section {
+            margin-top: 60px;
+            padding-top: 40px;
+        }
+
+        .decoration-image {
+            width: 350px;
+            max-width: 90%;
+            height: auto;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 30px 20px 20px;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        @media (min-width: 576px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .supercell-logo {
+            width: 52px;
+            height: 42px;
+        }
+
+        .cookie-link {
+            color: #999;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .social-icon:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .logo { width: 250px; }
+            .lead-text { font-size: 22px; }
+            .main-button { min-width: 200px; font-size: 18px; }
+            .decoration-image { width: 250px; }
+            .footer-links { gap: 20px; }
+            .download-buttons { flex-direction: column; align-items: center; }
+        }
+
+        @media (max-width: 480px) {
+            .logo { width: 200px; }
+            .lead-text { font-size: 20px; }
+            .main-button { min-width: 180px; font-size: 16px; height: 60px; }
+            .main-button:before,
+            .main-button:after { height: 60px; }
+            .decoration-image { width: 200px; }
+            .store-button { width: 100%; max-width: 250px; }
+            .footer-bottom { gap: 15px; }
+            .social-icons { gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Language Dropdown -->
+        <div class="language-dropdown-wrapper">
+            <select class="language-dropdown" name="locales" id="locales" aria-label="Select a language">
+                <option value="ar">العربية</option>
+                <option value="cn">简体中文</option>
+                <option value="cnt">繁體中文</option>
+                <option value="de">Deutsch</option>
+                <option value="en" selected>English</option>
+                <option value="es">Español</option>
+                <option value="fa">فارسی</option>
+                <option value="fi">Suomi</option>
+                <option value="fr">Français</option>
+                <option value="id">Bahasa Indonesia</option>
+                <option value="it">Italiano</option>
+                <option value="jp">日本語</option>
+                <option value="kr">한국어</option>
+                <option value="ms">Bahasa Melayu</option>
+                <option value="nl">Nederlands</option>
+                <option value="no">Norsk</option>
+                <option value="pt">Português</option>
+                <option value="ru">ру́сский</option>
+                <option value="th">ไทย</option>
+                <option value="tr">Türkçe</option>
+                <option value="vi">Tiếng Việt</option>
+            </select>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Logo -->
+            <div class="logo-container">
+                <a href="https://clashroyale.com">
+                    <img src="https://i.postimg.cc/HsR6qSC8/logo-opt-750.webp" alt="Clash Royale" class="logo">
+                </a>
+            </div>
+            
+            <!-- Lead Text -->
+            <div class="lead-text">
+                Claim a Reward In Clash Royale!
+            </div>
+            
+            <!-- QR Code -->
+            <div class="qr-container">
+                <!-- QR Code will appear here -->
+            </div>
+            
+            <!-- Main Button -->
+            <a href="clashroyale://" class="main-button">
+                <span>CLAIM REWARD</span>
+            </a>
+            
+            <!-- Download Section -->
+            <div class="download-section">
+                <div class="download-title">Download Clash Royale</div>
+                <div class="download-buttons">
+                    <a href="https://apps.apple.com/app/clash-royale/id1053012308" class="store-button apple">
+                        App Store
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.supercell.clashroyale" class="store-button google">
+                        Google Play
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Decoration -->
+            <section class="decoration-section">
+                <img src="https://i.postimg.cc/HsqtZVQj/deco-4b95dfae-opt-750.webp" alt="Decoration" class="decoration-image">
+            </section>
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+            <div class="footer-links">
+                <a href="https://supercell.com/en/parents/en">Parent's guide</a>
+                <a href="https://supercell.com/en/terms-of-service/en">Terms & Service</a>
+                <a href="https://supercell.com/en/privacy-policy/en">Privacy Policy</a>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-left">
+                    <a href="https://supercell.com">
+                        <img src="https://i.postimg.cc/LsTB8DGN/supercell-logo-73c8fcbc-opt-128.webp" alt="Supercell" class="supercell-logo">
+                    </a>
+                    <a href="#" class="cookie-link">Manage Cookies</a>
+                </div>
+                
+                <div class="social-icons">
+                    <a href="http://www.facebook.com/ClashRoyale" class="social-icon" aria-label="facebook">FB</a>
+                    <a href="https://twitter.com/ClashRoyale" class="social-icon" aria-label="twitter">TW</a>
+                    <a href="https://instagram.com/ClashRoyale" class="social-icon" aria-label="instagram">IG</a>
+                    <a href="https://youtube.com/clashroyale" class="social-icon" aria-label="youtube">YT</a>
+                    <a href="https://www.reddit.com/r/clashroyale" class="social-icon" aria-label="reddit">RD</a>
+                    <a href="https://www.tiktok.com/@clashroyale" class="social-icon" aria-label="tiktok">TT</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Simple interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Main button click
+            const mainButton = document.querySelector('.main-button');
+            if (mainButton) {
+                mainButton.addEventListener('click', function(e) {
+                    setTimeout(() => {
+                        if (document.visibilityState === 'visible') {
+                            alert('Opening Clash Royale... If nothing happens, please download the game first.');
+                        }
+                    }, 500);
+                });
+            }
+            
+            // Language dropdown
+            const langSelect = document.querySelector('.language-dropdown');
+            if (langSelect) {
+                langSelect.addEventListener('change', function() {
+                    console.log('Language changed to:', this.value);
+                });
+            }
+            
+            // Store buttons
+            const storeButtons = document.querySelectorAll('.store-button');
+            storeButtons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    console.log('Redirecting to app store...');
+                });
+            });
+            
+            // Cookie link
+            const cookieLink = document.querySelector('.cookie-link');
+            if (cookieLink) {
+                cookieLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Cookie management would open here.');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
