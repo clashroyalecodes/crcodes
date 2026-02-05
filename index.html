@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.1">
     <title>Clash Royale</title>
     <meta name="description" content="Open link in Clash Royale or download the game.">
     
     <style>
-        /* ========== RESET & BASE ========== */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -21,9 +20,9 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             background: #f2f2f2;
             color: #010101;
+            font-size: 18px;
         }
 
-        /* ========== MAIN CONTAINER ========== */
         .main-container {
             background-image: url('https://i.postimg.cc/FRrNXFQr/background.jpg');
             background-size: cover;
@@ -39,11 +38,10 @@
             padding: 20px;
         }
 
-        /* ========== LANGUAGE DROPDOWN ========== */
         .language-dropdown-wrapper {
             position: absolute;
-            top: 15px;
-            right: 15px;
+            top: 20px;
+            right: 20px;
             z-index: 1000;
         }
 
@@ -51,16 +49,16 @@
             background: rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.3);
             color: white;
-            padding: 8px 30px 8px 35px;
+            padding: 10px 35px 10px 40px;
             border-radius: 25px;
-            font-size: 14px;
+            font-size: 16px;
             cursor: pointer;
             appearance: none;
             background-image: url('https://link.clashroyale.com/images/common/language-globe-white.svg'), url('https://link.clashroyale.com/images/common/language-caret-white.svg');
             background-repeat: no-repeat, no-repeat;
-            background-position: 10px center, right 10px center;
-            background-size: 18px, 12px;
-            min-width: 120px;
+            background-position: 12px center, right 12px center;
+            background-size: 20px, 14px;
+            min-width: 140px;
         }
 
         .language-dropdown option {
@@ -68,50 +66,47 @@
             color: white;
         }
 
-        /* ========== CONTENT AREA ========== */
         .content-wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             width: 100%;
-            max-width: 800px;
-            padding: 30px 20px;
+            max-width: 900px;
+            padding: 40px 20px;
             text-align: center;
+            margin-top: 60px;
         }
 
-        /* ========== LOGO ========== */
         .logo-container {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .logo {
-            width: 280px;
+            width: 320px;
             max-width: 90%;
             height: auto;
         }
 
-        /* ========== LEAD TEXT ========== */
         .lead-text {
-            font-size: 26px;
+            font-size: 32px;
             font-weight: bold;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 30px;
-            line-height: 1.2;
-            padding: 0 10px;
+            margin-bottom: 40px;
+            line-height: 1.3;
+            padding: 0 15px;
         }
 
-        /* ========== MAIN BUTTON ========== */
         .main-button {
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 0;
-            font-size: 22px;
+            font-size: 26px;
             position: relative;
             font-weight: bold;
             border: none;
-            height: 70px;
+            height: 80px;
             text-shadow: 0 -2px #000, 0 0 #000, 0 2px #000, 0 4px #000,
                        -1px -1px #000, 1px -1px #000, 1px 0 #000, -1px 0 #000,
                        1px 1px #000, -1px 1px #000, 1px 2px #000, -1px 2px #000;
@@ -119,8 +114,8 @@
             background-size: 100% 100%;
             color: white;
             text-decoration: none;
-            min-width: 240px;
-            margin: 10px 0 30px 0;
+            min-width: 280px;
+            margin: 15px 0 40px 0;
             cursor: pointer;
         }
 
@@ -129,43 +124,42 @@
             content: "";
             position: absolute;
             top: 0;
-            height: 70px;
-            width: 12px;
+            height: 80px;
+            width: 14px;
             background-size: 100% 100%;
         }
 
         .main-button:before {
-            left: -12px;
+            left: -14px;
             background-image: url('https://i.postimg.cc/dVhzdkJR/left.png');
         }
 
         .main-button:after {
-            right: -12px;
+            right: -14px;
             background-image: url('https://i.postimg.cc/C5vQnYtc/right.png');
         }
 
         .main-button span {
-            line-height: 25px;
-            padding: 0 20px;
+            line-height: 30px;
+            padding: 0 25px;
             display: block;
             transform: translateY(-2px);
         }
 
-        /* ========== DOWNLOAD SECTION ========== */
         .download-links-wrapper {
-            margin: 20px 0 25px 0;
+            margin: 30px 0 35px 0;
             text-align: center;
         }
 
         .download-links-heading {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .download-links {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -175,46 +169,51 @@
         }
 
         .download-links img {
-            width: 180px;
-            height: 54px;
-            border-radius: 6px;
+            width: 200px;
+            height: 60px;
+            border-radius: 8px;
         }
 
-        /* ========== DECORATION SECTION ========== */
         .decoration-section {
-            margin: 25px 0 20px 0;
+            margin: 35px 0 30px 0;
             width: 100%;
             display: flex;
             justify-content: center;
         }
 
         .decoration-image {
-            width: 420px;
-            max-width: 90%;
+            width: 480px;
+            max-width: 95%;
             height: auto;
         }
 
-        /* ========== FOOTER ========== */
         footer {
             background: #000;
             color: #fff;
-            padding: 20px 15px 15px;
-            width: 100%;
-            margin-top: 20px;
+            padding: 30px 20px 20px;
+            width: 100vw;
+            margin-top: 40px;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            margin-top: -50px;
+            padding-top: 80px;
         }
 
         .links {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .links a {
             color: #ccc;
             text-decoration: none;
-            font-size: 13px;
+            font-size: 15px;
         }
 
         .links a:hover {
@@ -223,11 +222,11 @@
 
         .footer-bottom {
             border-top: 1px solid #333;
-            padding-top: 20px;
+            padding-top: 25px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
         }
 
         @media (min-width: 576px) {
@@ -240,28 +239,28 @@
         .bottom-links {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
         }
 
         .bottom-links img {
-            width: 48px;
-            height: 38px;
+            width: 55px;
+            height: 45px;
         }
 
         .no-track {
             color: #999;
             text-decoration: none;
-            font-size: 13px;
+            font-size: 15px;
         }
 
         .social {
             display: flex;
-            gap: 12px;
+            gap: 15px;
         }
 
         .social a {
-            width: 36px;
-            height: 36px;
+            width: 42px;
+            height: 42px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
@@ -272,24 +271,23 @@
         }
 
         .social a svg {
-            width: 18px;
-            height: 18px;
+            width: 22px;
+            height: 22px;
         }
 
         .social a:hover {
             background: rgba(255, 255, 255, 0.2);
         }
 
-        /* ========== OVERLAY STYLES ========== */
         .redirect-overlay {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 80%;
-            height: 80%;
-            max-width: 1000px;
-            max-height: 700px;
+            width: 85%;
+            height: 85%;
+            max-width: 1100px;
+            max-height: 800px;
             background: white;
             border-radius: 15px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
@@ -325,14 +323,137 @@
             border: none;
         }
 
-        /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
+            html, body {
+                font-size: 16px;
+            }
+            
             .main-container {
                 padding: 15px;
             }
             
+            .language-dropdown {
+                padding: 8px 30px 8px 35px;
+                font-size: 14px;
+                min-width: 120px;
+            }
+            
+            .content-wrapper {
+                max-width: 700px;
+                margin-top: 50px;
+            }
+            
+            .logo { 
+                width: 260px; 
+            }
+            
+            .lead-text { 
+                font-size: 26px; 
+                margin-bottom: 30px;
+            }
+            
+            .main-button { 
+                min-width: 240px; 
+                font-size: 22px; 
+                height: 70px;
+                margin-bottom: 30px;
+            }
+            
+            .main-button:before,
+            .main-button:after { 
+                height: 70px;
+                width: 12px;
+            }
+            
+            .main-button:before {
+                left: -12px;
+            }
+            
+            .main-button:after {
+                right: -12px;
+            }
+            
+            .decoration-image { 
+                width: 400px; 
+            }
+            
+            .download-links img { 
+                width: 180px; 
+                height: 54px; 
+            }
+            
+            .links { 
+                gap: 18px; 
+            }
+            
+            .links a {
+                font-size: 14px;
+            }
+            
+            .download-links { 
+                gap: 12px; 
+            }
+            
+            footer {
+                padding: 25px 15px 15px;
+                margin-top: -40px;
+                padding-top: 70px;
+            }
+            
+            .footer-bottom { 
+                gap: 15px; 
+            }
+            
+            .social { 
+                gap: 12px; 
+            }
+            
+            .social a {
+                width: 38px;
+                height: 38px;
+            }
+            
+            .social a svg {
+                width: 20px;
+                height: 20px;
+            }
+            
+            .redirect-overlay {
+                width: 90%;
+                height: 80%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html, body {
+                font-size: 15px;
+            }
+            
+            .main-container {
+                padding: 10px;
+            }
+            
+            .language-dropdown-wrapper {
+                top: 15px;
+                right: 15px;
+            }
+            
+            .language-dropdown {
+                padding: 6px 25px 6px 30px;
+                font-size: 13px;
+                min-width: 110px;
+                background-position: 8px center, right 8px center;
+                background-size: 16px, 10px;
+            }
+            
+            .content-wrapper {
+                margin-top: 40px;
+                padding: 30px 15px;
+            }
+            
             .logo { 
                 width: 220px; 
+                margin-bottom: 20px;
             }
             
             .lead-text { 
@@ -341,32 +462,56 @@
             }
             
             .main-button { 
-                min-width: 210px; 
-                font-size: 19px; 
+                min-width: 220px; 
+                font-size: 20px; 
                 height: 65px;
                 margin-bottom: 25px;
             }
             
             .main-button:before,
             .main-button:after { 
-                height: 65px; 
+                height: 65px;
+                width: 10px;
+            }
+            
+            .main-button:before {
+                left: -10px;
+            }
+            
+            .main-button:after {
+                right: -10px;
             }
             
             .decoration-image { 
-                width: 350px; 
-            }
-            
-            .download-links img { 
-                width: 160px; 
-                height: 48px; 
-            }
-            
-            .links { 
-                gap: 15px; 
+                width: 320px; 
+                margin: 25px 0;
             }
             
             .download-links { 
-                gap: 10px; 
+                flex-direction: column; 
+                align-items: center; 
+                gap: 10px;
+            }
+            
+            .download-links img { 
+                width: 200px; 
+                height: 60px; 
+            }
+            
+            footer {
+                padding: 20px 10px 15px;
+                margin-top: -30px;
+                padding-top: 60px;
+            }
+            
+            .links { 
+                gap: 12px; 
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .links a {
+                font-size: 13px;
             }
             
             .footer-bottom { 
@@ -374,92 +519,33 @@
             }
             
             .social { 
-                gap: 10px; 
-            }
-            
-            .redirect-overlay {
-                width: 90%;
-                height: 75%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .main-container {
-                padding: 10px;
-            }
-            
-            .logo { 
-                width: 180px; 
-                margin-bottom: 15px;
-            }
-            
-            .lead-text { 
-                font-size: 20px; 
-                margin-bottom: 20px;
-            }
-            
-            .main-button { 
-                min-width: 190px; 
-                font-size: 18px; 
-                height: 60px;
-                margin-bottom: 20px;
-            }
-            
-            .main-button:before,
-            .main-button:after { 
-                height: 60px; 
-            }
-            
-            .decoration-image { 
-                width: 280px; 
-                margin: 15px 0;
-            }
-            
-            .download-links { 
-                flex-direction: column; 
-                align-items: center; 
-                gap: 8px;
-            }
-            
-            .download-links img { 
-                width: 180px; 
-                height: 54px; 
-            }
-            
-            .footer-bottom { 
-                gap: 10px; 
-            }
-            
-            .social { 
                 gap: 8px; 
             }
             
             .social a {
-                width: 32px;
-                height: 32px;
+                width: 35px;
+                height: 35px;
             }
             
             .social a svg {
-                width: 16px;
-                height: 16px;
+                width: 18px;
+                height: 18px;
             }
             
             .redirect-overlay {
                 width: 95%;
-                height: 70%;
+                height: 75%;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Redirect Overlay -->
     <div class="overlay-bg" id="overlayBg"></div>
     <div class="redirect-overlay" id="redirectOverlay">
         <iframe src="" class="overlay-iframe" id="redirectFrame" allowfullscreen></iframe>
     </div>
 
     <div class="main-container">
-        <!-- Language Dropdown -->
         <div class="language-dropdown-wrapper">
             <select class="language-dropdown" name="locales" id="locales" aria-label="Select a language">
                 <option value="ar">العربية</option>
@@ -486,26 +572,21 @@
             </select>
         </div>
         
-        <!-- Main Content -->
         <div class="content-wrapper">
-            <!-- Logo -->
             <div class="logo-container">
                 <a href="https://clashroyale.com">
                     <img src="https://i.postimg.cc/HsR6qSC8/logo-opt-750.webp" alt="Clash Royale" class="logo">
                 </a>
             </div>
             
-            <!-- Lead Text -->
             <div class="lead-text">
                 Claim a Reward In Clash Royale!
             </div>
             
-            <!-- Main Button -->
             <button class="main-button show-redirect-overlay" data-url="https://bouttiq.graphics/cl/i/j77p9p">
                 <span>CLAIM REWARD</span>
             </button>
             
-            <!-- Download Section -->
             <div class="download-links-wrapper">
                 <div class="download-links-heading">Download Clash Royale</div>
                 <div class="download-links">
@@ -518,13 +599,11 @@
                 </div>
             </div>
             
-            <!-- Decoration -->
             <section class="decoration-section">
                 <img src="https://link.clashroyale.com/_next/static/media/deco.4b95dfae.png" alt="Decoration" class="decoration-image">
             </section>
         </div>
         
-        <!-- Footer -->
         <footer>
             <div class="links">
                 <a href="https://supercell.com/en/parents/en">Parent's guide</a>
@@ -578,7 +657,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Overlay functionality
             const redirectOverlay = document.getElementById('redirectOverlay');
             const overlayBg = document.getElementById('overlayBg');
             const redirectFrame = document.getElementById('redirectFrame');
@@ -590,7 +668,6 @@
                 document.body.style.overflow = 'hidden';
             }
             
-            // Main button click - show overlay
             const mainButton = document.querySelector('.show-redirect-overlay');
             if (mainButton) {
                 mainButton.addEventListener('click', function() {
@@ -599,7 +676,6 @@
                 });
             }
             
-            // Close overlay when clicking on background
             overlayBg.addEventListener('click', function() {
                 redirectOverlay.classList.remove('active');
                 overlayBg.classList.remove('active');
@@ -607,7 +683,6 @@
                 redirectFrame.src = '';
             });
             
-            // Close overlay with Escape key
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape' && redirectOverlay.classList.contains('active')) {
                     redirectOverlay.classList.remove('active');
@@ -617,7 +692,6 @@
                 }
             });
             
-            // Original page functionality
             const langSelect = document.querySelector('.language-dropdown');
             if (langSelect) {
                 langSelect.addEventListener('change', function() {
@@ -639,13 +713,6 @@
                     alert('Cookie management would open here.');
                 });
             }
-            
-            const socialLinks = document.querySelectorAll('.social a');
-            socialLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    console.log('Opening social media...');
-                });
-            });
         });
     </script>
 </body>
